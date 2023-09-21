@@ -1,0 +1,8 @@
+{
+    "hello": "Bonjour",
+    "animals": {
+        "rabbit": "lapin",
+        "dog": "chien",
+        "duck": "canard"
+    }
+}

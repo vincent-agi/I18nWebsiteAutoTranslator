@@ -1,0 +1,8 @@
+{
+    "hello": "ciao",
+    "animals": {
+        "rabbit": "coniglio",
+        "dog": "cane",
+        "duck": "anatra"
+    }
+}

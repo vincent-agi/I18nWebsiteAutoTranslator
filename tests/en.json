@@ -1,0 +1,8 @@
+{
+  "hello": "hello",
+  "animals": {
+    "rabbit": "rabbit",
+    "dog": "dog",
+    "duck": "duck"
+  }
+}

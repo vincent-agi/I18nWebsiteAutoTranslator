@@ -20,6 +20,18 @@ Feel free to do whatever you like with it.
 - Usable with CLI (can be integrated in other software or process quality)
 - Very lighweight
 
+## Requierements
+To use this program you need :
+- Python3 installed on your computer
+- Deepl API Key (on create account you can get one for free)
+
+## How to start
+- First git clone this project ```git clone https://github.com/vincent-agi/I18nWebsiteAutoTranslator.git```
+- Then move to project directory ```cd I18nWebsiteAutoTranslator```
+- Next install python requirements ```pip install requests```
+- Create Deepl Account to get free (or paid) API Key and put it in deepl-key.json file
+- Finaly, Enjoy use :)
+
 ## Examples
 ### Translate english JSON file stored at ./tests folder and create new file it.json in ./tests with italian translations
 ```
