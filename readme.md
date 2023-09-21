@@ -53,5 +53,9 @@ https://www.deepl.com/docs-api/translate-text
 - I studied at IUT de Bayonne et du Pays Basque under direction amazing professors
 - Work at Groupe Gallium
 
+## Disclamer
+I'm not responsable your use.
+I encourage you check all JSON documents producted. You must know translation API isn't fully trust.
+
 ## License
 This program is under lisence GNU Affero General Public License
