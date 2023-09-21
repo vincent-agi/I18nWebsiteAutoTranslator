@@ -41,6 +41,11 @@ python main.py --origin-lang EN --target-lang IT --input-file ./tests/en.json --
 ```
 python main.py --help
 ```
+
+## How to find language code
+you can find all language code available on Deepl API directly on Deepl documentation
+https://www.deepl.com/docs-api/translate-text
+
 ## About me
 - Young french Software Developer
 - Technology enthusiast
