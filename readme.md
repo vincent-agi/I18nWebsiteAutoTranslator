@@ -42,6 +42,13 @@ python main.py --origin-lang EN --target-lang IT --input-file ./tests/en.json --
 python main.py --help
 ```
 
+## How to know if all work fine ?
+It's not very complicated to find out if the application is working properly. First you need a Deepl api key (free or paid, it doesn't matter). Enter your key in the deepl-key.json file. Then open terminal torun the unit tests with the command
+```
+python tests.py
+```
+If you get an "Ok" response, the application is working properly.
+
 ## How to find language code
 you can find all language code available on Deepl API directly on Deepl documentation
 https://www.deepl.com/docs-api/translate-text
