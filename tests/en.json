@@ -1,8 +1,277 @@
 {
-  "hello": "hello",
-  "animals": {
-    "rabbit": "rabbit",
-    "dog": "dog",
-    "duck": "duck"
-  }
+    "wineList": {
+        "title": "Wine list",
+        "sections": [
+            {
+                "sectionTitle": "Red wines",
+                "items": [
+                    {
+                        "name": "Domaine Chantepierre",
+                        "desc": "AOP, village côte du Rhône",
+                        "bottle": "25 €",
+                        "glass": "5 €"
+                    },
+                    {
+                        "name": "Villebois Pinot Noir",
+                        "desc": "IGP, Loire vin de France",
+                        "bottle": "33 €",
+                        "glass": "6 €"
+                    },
+                    {
+                        "name": "Crozes Hermitage",
+                        "desc": "PDO, the palates",
+                        "bottle": "48 €",
+                        "glass": "8 €"
+                    },
+                    {
+                        "name": "Saint Joseph",
+                        "desc": "PDO, Domaine Durand cuvée Lautaret",
+                        "bottle": "69 €"
+                    },
+                    {
+                        "name": "Savigny les Beaune",
+                        "desc": "PDO, Maison Champy",
+                        "bottle": "96 €"
+                    }
+                ]
+            },
+            {
+                "sectionTitle": "Rosé",
+                "items": [
+                    {
+                        "name": "Uby Sauvignon",
+                        "desc": "IGP, Côtes de Gascogne, Domaine Uby",
+                        "bottle": "22 €",
+                        "glass": "5 €"
+                    },
+                    {
+                        "name": "La Source Gabriel",
+                        "desc": "PDO, côtes de Provence, château la tour de l'évêque",
+                        "bottle": "24 €",
+                        "glass": "5 €"
+                    },
+                    {
+                        "name": "Miss Landaise",
+                        "desc": "PGI",
+                        "bottle": "22 €",
+                        "glass": "5 €"
+                    }
+                ]
+            },
+            {
+                "sectionTitle": "White wines",
+                "items": [
+                    {
+                        "name": "Uby Sauvignon",
+                        "desc": "IGP, Côtes de Gascogne, Domaine Uby",
+                        "bottle": "24 €",
+                        "glass": "5 €"
+                    },
+                    {
+                        "name": "Jurançon dry",
+                        "desc": "PDO, Domaine nomblot traydou",
+                        "bottle": "24 €",
+                        "glass": "5 €"
+                    },
+                    {
+                        "name": "Sweet Jurançon",
+                        "desc": "PDO, domaine nomblot traydou",
+                        "bottle": "29 €"
+                    },
+                    {
+                        "name": "Low tide",
+                        "desc": "IGP, St Guilhem le désert",
+                        "bottle": "22 €"
+                    },
+                    {
+                        "name": "Mâcon Lugny",
+                        "desc": "AOC",
+                        "bottle": "26 €"
+                    }
+                ]
+            },
+            {
+                "sectionTitle": "Champagne",
+                "items": [
+                    {
+                        "name": "Brut Tradition",
+                        "desc": "Bouchard et fils",
+                        "bottle": "55 €"
+                    },
+                    {
+                        "name": "Brut Rosé",
+                        "desc": "Bouchard et fils",
+                        "bottle": "60 €"
+                    },
+                    {
+                        "name": "Cuvée Emilien 100% Pinot Noir",
+                        "desc": "Bouchard et fils",
+                        "bottle": "69 €"
+                    },
+                    {
+                        "name": "Cuvée Réserve Nature",
+                        "desc": "Bouchard et fils",
+                        "bottle": "69 €"
+                    }
+                ]
+            }
+        ]
+    },
+    "drinks": {
+        "title": "Carte - Softs, aperitifs, waters",
+        "sections": [
+            {
+                "sectionTitle": "Cold drinks",
+                "items": [
+                    {
+                        "name": "Coca Cola",
+                        "desc": "33cl",
+                        "price": "3 €"
+                    },
+                    {
+                        "name": "Coca Cola Light",
+                        "desc": "33cl",
+                        "price": "3 €"
+                    },
+                    {
+                        "name": "Ice Tea",
+                        "desc": "33cl",
+                        "price": "3 €"
+                    },
+                    {
+                        "name": "Lemonade",
+                        "desc": "25cl",
+                        "price": "3 €"
+                    },
+                    {
+                        "name": "Argi Juice",
+                        "desc": "25cl (L'Équilibre: apple, beet, mint / Le Pep's: mango, apple, ginger / Le Tonus: pineapple, banana, orange, passion fruit / Le Matinal: pineapple / Le Tout Doux: apple, banana / Le Bien-être: pineapple, banana, orange, passion fruit)",
+                        "price": "4,5 €"
+                    }
+                ]
+            },
+            {
+                "sectionTitle": "Hot drinks",
+                "items": [
+                    {
+                        "name": "Café",
+                        "price": "1,5 €"
+                    },
+                    {
+                        "name": "Tea",
+                        "price": "2,5 €"
+                    }
+                ]
+            },
+            {
+                "sectionTitle": "Water",
+                "items": [
+                    {
+                        "name": "Sparkling water",
+                        "desc": "50cl",
+                        "price": "3,5 €"
+                    },
+                    {
+                        "name": "Perrier",
+                        "desc": "33cl",
+                        "price": "3 €"
+                    }
+                ]
+            },
+            {
+                "sectionTitle": "Aperitifs / Digestifs",
+                "items": [
+                    {
+                        "name": "Bruel Beer",
+                        "desc": "33cl",
+                        "price": "5 €"
+                    },
+                    {
+                        "name": "Kir",
+                        "desc": "4cl",
+                        "price": "7 €"
+                    },
+                    {
+                        "name": "Gin + Tonic",
+                        "desc": "AmaiaK : fraternal n°1 / AnaiaK : fraternal n°2 / Gin 40 / Gin 22",
+                        "price": "12 €"
+                    },
+                    {
+                        "name": "Menta Egiazki",
+                        "desc": "4cl",
+                        "price": "5 €"
+                    },
+                    {
+                        "name": "Old rum",
+                        "price": "9 €"
+                    },
+                    {
+                        "name": "Patxaran Egiazki",
+                        "desc": "4cl",
+                        "price": "7 €"
+                    },
+                    {
+                        "name": "Wisky",
+                        "price": "5 €"
+                    },
+                    {
+                        "name": "Irish or Jamaican coffee",
+                        "price": "9 €"
+                    }
+                ]
+            }
+        ]
+    },
+    "menu": {
+        "title": "Menu",
+        "sections": [
+            {
+                "sectionTitle": "Inputs",
+                "items": [
+                    {
+                        "name": "Hummus, pickles, black sesame, herbs and trout roe",
+                        "price": "14 €"
+                    },
+                    {
+                        "name": "Red tuna sashimi, soy sauce revisited",
+                        "price": "16 €"
+                    }
+                ]
+            },
+            {
+                "sectionTitle": "Dishes",
+                "items": [
+                    {
+                        "name": "Fishing of the day",
+                        "price": "26 €"
+                    },
+                    {
+                        "name": "A must this season",
+                        "price": "29 €"
+                    },
+                    {
+                        "name": "Gambas",
+                        "price": "24 €"
+                    }
+                ]
+            },
+            {
+                "sectionTitle": "Desserts",
+                "items": [
+                    {
+                        "name": "Chocolate, tonka/cardamom ganache, hazelnut and peanut feuilletine",
+                        "price": "11,5 €"
+                    },
+                    {
+                        "name": "Burnt cloud, timut pepper, red fruit gel, crumble",
+                        "price": "9,5 €"
+                    },
+                    {
+                        "name": "Brie mendiant, 3D hazelnuts and dates",
+                        "price": "8 €"
+                    }
+                ]
+            }
+        ]
+    }
 }

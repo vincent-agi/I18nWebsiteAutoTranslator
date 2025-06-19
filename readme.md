@@ -26,9 +26,26 @@ To use this program you need :
 - Deepl API Key (on create account you can get one for free)
 
 ## How to start
-- First git clone this project ```git clone https://github.com/vincent-agi/I18nWebsiteAutoTranslator.git```
-- Then move to project directory ```cd I18nWebsiteAutoTranslator```
-- Next install python requirements ```pip install requests```
+- First git clone this project 
+```bash 
+git clone https://github.com/vincent-agi/I18nWebsiteAutoTranslator.git
+```
+- Then move to project directory 
+```bash 
+cd I18nWebsiteAutoTranslator
+```
+- Installer le python Venv
+```bash
+python -m venv venv
+```
+Or
+```bash
+python3 -m venv venv
+```
+- Next install python requirements 
+```bash 
+pip install -r requirements
+```
 - Create Deepl Account to get free (or paid) API Key and put it in deepl-key.json file
 - Finaly, Enjoy use :)
 
