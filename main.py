@@ -2,8 +2,10 @@ import argparse
 import json
 import requests
 
-
 def translate_text(text, original_lang, target_lang, deepl_api_key):
+    """Traduit un texte via l'API DeepL, retourne le texte d'origine en cas d'échec."""
+    if not isinstance(text, str):
+        return text
     if deepl_api_key.endswith("fx"):
         base_url = "https://api-free.deepl.com/v2/translate"
     else:
@@ -14,67 +16,62 @@ def translate_text(text, original_lang, target_lang, deepl_api_key):
         "target_lang": target_lang.upper(),
         "auth_key": deepl_api_key,
     }
-
-    response = requests.post(base_url, data=params)
-    if response.status_code == 200:
-        translation_data = response.json()
-        if "translations" in translation_data:
-            return translation_data["translations"][0]["text"]
-    return None
-
-
-def translate_dict(input_dict, original_lang, target_lang, deepl_api_key):
-    output_dict = {}
-    for key, value in input_dict.items():
-        if isinstance(value, str):
-            # Traduire uniquement les valeurs de type chaîne de caractères
-            translated_value = translate_text(value, original_lang, target_lang, deepl_api_key)
-            if translated_value:
-                output_dict[key] = translated_value
+    try:
+        response = requests.post(base_url, data=params, timeout=15)
+        if response.status_code == 200:
+            translation_data = response.json()
+            if "translations" in translation_data:
+                return translation_data["translations"][0]["text"]
             else:
-                output_dict[key] = value
-        elif isinstance(value, dict):
-            # Appel récursif pour les sous-dictionnaires
-            output_dict[key] = translate_dict(value, original_lang, target_lang, deepl_api_key)
+                print("DeepL API: 'translations' not in response for text:", text)
         else:
-            # Conserver les autres types de valeurs tels quels
-            output_dict[key] = value
-    return output_dict
+            print(f"DeepL API error {response.status_code} for text: {text}")
+    except Exception as e:
+        print(f"Erreur DeepL sur '{text[:30]}...': {e}")
+    return text  # fallback : on garde la valeur d'origine
 
+def translate_any(obj, original_lang, target_lang, deepl_api_key):
+    """Traduit récursivement toutes les valeurs str du JSON, quelle que soit la structure."""
+    if isinstance(obj, str):
+        return translate_text(obj, original_lang, target_lang, deepl_api_key)
+    elif isinstance(obj, dict):
+        return {k: translate_any(v, original_lang, target_lang, deepl_api_key) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        # Ne surtout pas mettre un return dans la boucle !
+        return [translate_any(item, original_lang, target_lang, deepl_api_key) for item in obj]
+    else:
+        return obj  # int, float, None, bool, etc.
 
 def main():
-    parser = argparse.ArgumentParser(description="Help to auto translate I18N JSON file using famous Deepl API.")
-    parser.add_argument("--origin-lang", required=True, help="Original language from input file.")
-    parser.add_argument("--target-lang", required=True, help="Target language you wish output file will translate.")
-    parser.add_argument("--input-file", required=True, help="Relatif path to original file.")
-    parser.add_argument("--output-file", required=True, help="Relatif path to output file.")
-    parser.add_argument("--credits", action="store_true", help="Show 'Abouts' informations.")
-
+    parser = argparse.ArgumentParser(description="Traduction automatique de JSON DeepL.")
+    parser.add_argument("--origin-lang", required=True, help="Langue d'origine (ex: FR).")
+    parser.add_argument("--target-lang", required=True, help="Langue cible (ex: EN, ES, etc.).")
+    parser.add_argument("--input-file", required=True, help="Chemin du JSON source.")
+    parser.add_argument("--output-file", required=True, help="Chemin du JSON traduit.")
+    parser.add_argument("--credits", action="store_true", help="Afficher les crédits.")
     args = parser.parse_args()
 
     if args.credits:
         print("Programme de traduction JSON avec DeepL.")
         print("Développé par Vincent AGI.")
-        print("Plus d'informations dans le fichier README.md.")
-    else:
-        try:
-            with open("deepl-key.json", "r") as key_file:
-                deepl_key = json.load(key_file)["deepl-key"]
+        return
 
-            with open(args.input_file, "r") as input_file:
-                input_data = json.load(input_file)
-
-            original_lang = args.origin_lang
-            target_lang = args.target_lang
-            translated_data = translate_dict(input_data, original_lang, target_lang, deepl_key)
-
-            with open(args.output_file, "w+") as output_file:
-               json.dump(translated_data, output_file, ensure_ascii=False, indent=4)
-
-            print(f"Translation done. Result in {args.output_file}")
-        except Exception as e:
-            print(f"Une erreur s'est produite : {str(e)}")
-
+    try:
+        with open("deepl-key.json", "r", encoding="utf-8") as key_file:
+            deepl_key = json.load(key_file)["deepl-key"]
+        with open(args.input_file, "r", encoding="utf-8") as input_file:
+            input_data = json.load(input_file)
+        translated_data = translate_any(
+            input_data,
+            args.origin_lang,
+            args.target_lang,
+            deepl_key
+        )
+        with open(args.output_file, "w", encoding="utf-8") as output_file:
+            json.dump(translated_data, output_file, ensure_ascii=False, indent=4)
+        print(f"Traduction terminée. Résultat dans {args.output_file}")
+    except Exception as e:
+        print(f"Une erreur s'est produite : {str(e)}")
 
 if __name__ == "__main__":
     main()

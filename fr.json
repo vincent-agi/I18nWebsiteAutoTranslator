@@ -1,0 +1,277 @@
+{
+  "wineList": {
+    "title": "Carte des vins",
+    "sections": [
+      {
+        "sectionTitle": "Vins rouges",
+        "items": [
+          {
+            "name": "Domaine Chantepierre",
+            "desc": "AOP, village côte du Rhône",
+            "bottle": "25 €",
+            "glass": "5 €"
+          },
+          {
+            "name": "Villebois Pinot Noir",
+            "desc": "IGP, Loire vin de France",
+            "bottle": "33 €",
+            "glass": "6 €"
+          },
+          {
+            "name": "Crozes Hermitage",
+            "desc": "AOP, les palais",
+            "bottle": "48 €",
+            "glass": "8 €"
+          },
+          {
+            "name": "Saint Joseph",
+            "desc": "AOP, domaine Durand cuvée Lautaret",
+            "bottle": "69 €"
+          },
+          {
+            "name": "Savigny les Beaune",
+            "desc": "AOP, Maison Champy",
+            "bottle": "96 €"
+          }
+        ]
+      },
+      {
+        "sectionTitle": "Rosé",
+        "items": [
+          {
+            "name": "Uby Sauvignon",
+            "desc": "IGP, côtes de Gascogne, Domaine Uby",
+            "bottle": "22 €",
+            "glass": "5 €"
+          },
+          {
+            "name": "La Source Gabriel",
+            "desc": "AOP, côtes de Provence, château la tour de l’évêque",
+            "bottle": "24 €",
+            "glass": "5 €"
+          },
+          {
+            "name": "Miss Landaise",
+            "desc": "IGP",
+            "bottle": "22 €",
+            "glass": "5 €"
+          }
+        ]
+      },
+      {
+        "sectionTitle": "Vins blancs",
+        "items": [
+          {
+            "name": "Uby Sauvignon",
+            "desc": "IGP, côtes de Gascogne, Domaine Uby",
+            "bottle": "24 €",
+            "glass": "5 €"
+          },
+          {
+            "name": "Jurançon sec",
+            "desc": "AOP, Domaine nomblot traydou",
+            "bottle": "24 €",
+            "glass": "5 €"
+          },
+          {
+            "name": "Jurançon moelleux",
+            "desc": "AOP, domaine nomblot traydou",
+            "bottle": "29 €"
+          },
+          {
+            "name": "Marée basse",
+            "desc": "IGP, St Guilhem le désert",
+            "bottle": "22 €"
+          },
+          {
+            "name": "Mâcon Lugny",
+            "desc": "AOC",
+            "bottle": "26 €"
+          }
+        ]
+      },
+      {
+        "sectionTitle": "Champagne",
+        "items": [
+          {
+            "name": "Brut Tradition",
+            "desc": "Bouchard et fils",
+            "bottle": "55 €"
+          },
+          {
+            "name": "Brut Rosé",
+            "desc": "Bouchard et fils",
+            "bottle": "60 €"
+          },
+          {
+            "name": "Cuvée Emilien 100% Pinot Noir",
+            "desc": "Bouchard et fils",
+            "bottle": "69 €"
+          },
+          {
+            "name": "Cuvée Réserve Nature",
+            "desc": "Bouchard et fils",
+            "bottle": "69 €"
+          }
+        ]
+      }
+    ]
+  },
+  "drinks": {
+    "title": "Carte - Softs, apéritifs, eaux",
+    "sections": [
+      {
+        "sectionTitle": "Boissons fraîches",
+        "items": [
+          {
+            "name": "Coca Cola",
+            "desc": "33cl",
+            "price": "3 €"
+          },
+          {
+            "name": "Coca Cola Light",
+            "desc": "33cl",
+            "price": "3 €"
+          },
+          {
+            "name": "Ice Tea",
+            "desc": "33cl",
+            "price": "3 €"
+          },
+          {
+            "name": "Limonade",
+            "desc": "25cl",
+            "price": "3 €"
+          },
+          {
+            "name": "Petit Jus d'Argi",
+            "desc": "25cl (L'Équilibre : pomme, betterave, menthe / Le Pep's : mangue, pomme, gingembre / Le Tonus : ananas, banane, orange, passion / Le Matinal : ananas / Le Tout Doux : pomme, banane / Le Bien-être : ananas, banane, orange, passion)",
+            "price": "4,5 €"
+          }
+        ]
+      },
+      {
+        "sectionTitle": "Boissons chaudes",
+        "items": [
+          {
+            "name": "Café",
+            "price": "1,5 €"
+          },
+          {
+            "name": "Thé",
+            "price": "2,5 €"
+          }
+        ]
+      },
+      {
+        "sectionTitle": "Eaux",
+        "items": [
+          {
+            "name": "Eau pétillante",
+            "desc": "50cl",
+            "price": "3,5 €"
+          },
+          {
+            "name": "Perrier",
+            "desc": "33cl",
+            "price": "3 €"
+          }
+        ]
+      },
+      {
+        "sectionTitle": "Apéritifs / Digestifs",
+        "items": [
+          {
+            "name": "Bière Bruel",
+            "desc": "33cl",
+            "price": "5 €"
+          },
+          {
+            "name": "Kir",
+            "desc": "4cl",
+            "price": "7 €"
+          },
+          {
+            "name": "Gin + Tonic",
+            "desc": "AmaiaK : fraternel n°1 / AnaiaK : fraternel n°2 / Gin 40 / Gin 22",
+            "price": "12 €"
+          },
+          {
+            "name": "Menta Egiazki",
+            "desc": "4cl",
+            "price": "5 €"
+          },
+          {
+            "name": "Rhum vieux",
+            "price": "9 €"
+          },
+          {
+            "name": "Patxaran Egiazki",
+            "desc": "4cl",
+            "price": "7 €"
+          },
+          {
+            "name": "Wisky",
+            "price": "5 €"
+          },
+          {
+            "name": "Irish ou Jamaican coffee",
+            "price": "9 €"
+          }
+        ]
+      }
+    ]
+  },
+  "menu": {
+    "title": "Menu",
+    "sections": [
+      {
+        "sectionTitle": "Entrées",
+        "items": [
+          {
+            "name": "Houmous, pickels, sésame noir, aromates et œufs de truite",
+            "price": "14 €"
+          },
+          {
+            "name": "Sashimi de thon rouge, sauce soja revisitée",
+            "price": "16 €"
+          }
+        ]
+      },
+      {
+        "sectionTitle": "Plats",
+        "items": [
+          {
+            "name": "Pêche du jour",
+            "price": "26 €"
+          },
+          {
+            "name": "Incontournable de la saison",
+            "price": "29 €"
+          },
+          {
+            "name": "Gambas",
+            "price": "24 €"
+          }
+        ]
+      },
+      {
+        "sectionTitle": "Desserts",
+        "items": [
+          {
+            "name": "Ganache chocolat, tonka/cardamome, feuilletine noisette et cacahuète",
+            "price": "11,5 €"
+          },
+          {
+            "name": "Nuage brûlé, poivre de timut, gel fruits rouge, crumble",
+            "price": "9,5 €"
+          },
+          {
+            "name": "Brie mendiant, 3D noisettes et dattes",
+            "price": "8 €"
+          }
+        ]
+      }
+    ]
+  }
+}
