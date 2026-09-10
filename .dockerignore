@@ -1,0 +1,34 @@
+# Keep the build context tiny — anything not needed to build the wheel stays out.
+.git/
+.github/
+.idea/
+.vscode/
+.venv/
+venv/
+env/
+
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.pytype/
+**/__pycache__/
+**/*.py[cod]
+
+dist/
+build/
+*.egg-info/
+htmlcov/
+.coverage
+.coverage.*
+
+tests/
+docs/
+examples/
+
+# Legacy shim / dev-only files, not used by the image.
+main.py
+requirements.txt
+
+# Never ship a key into an image.
+deepl-key.json
+deepl-key.json.example

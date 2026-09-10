@@ -90,6 +90,58 @@ alias.
 | `--indent` | Output JSON indentation (default `4`). |
 | `-v`, `--verbose` | Debug logging. |
 
+## Docker
+
+The tool ships as a small multi-stage image (Python slim + an isolated venv,
+non-root, no build tools in the final layer). Published on every push:
+
+- **GHCR:** `ghcr.io/vincent-agi/i18nwebsiteautotranslator`
+- **Docker Hub:** `vincentagi/i18n-translator` *(when the `DOCKERHUB_USERNAME`
+  repo variable and `DOCKERHUB_TOKEN` secret are set)*
+
+Tags: `latest` (default branch), plus `X`, `X.Y`, `X.Y.Z` on `vX.Y.Z` git tags.
+
+### One-shot run (throwaway container)
+
+`--rm` removes the container the moment it exits; nothing is left running. Mount
+the directory that holds your JSON files at `/work` and run paths relative to it:
+
+```bash
+docker run --rm \
+  -e DEEPL_API_KEY \
+  -v "$PWD":/work \
+  ghcr.io/vincent-agi/i18nwebsiteautotranslator:latest \
+  -s FR -t EN -i examples/fr.json -o examples/fr.en.json
+```
+
+The key can also come from a `deepl-key.json` in the mounted directory instead of
+`-e DEEPL_API_KEY`. Add `--user "$(id -u):$(id -g)"` so the output file is owned
+by you and not by root.
+
+### Helper script (run + cleanup)
+
+`scripts/i18n-translate-docker.sh` wraps the above: it runs as your host
+uid/gid by default, and `--cleanup` removes the image and prunes dangling
+layers afterwards (Docker fills disk fast when images pile up).
+
+```bash
+DEEPL_API_KEY=xxx scripts/i18n-translate-docker.sh -- \
+  -s FR -t EN -i examples/fr.json -o examples/fr.en.json
+
+# translate, then drop the image + dangling layers
+DEEPL_API_KEY=xxx scripts/i18n-translate-docker.sh --cleanup -- \
+  -s EN -t DE -i en.json -o de.json
+```
+
+Override the image with `I18N_TRANSLATE_IMAGE`, the mounted dir with
+`I18N_TRANSLATE_WORKDIR`. `scripts/i18n-translate-docker.sh --help` lists it all.
+
+### Build locally
+
+```bash
+docker build -t i18n-translator .
+```
+
 ## Tests
 
 ```bash
