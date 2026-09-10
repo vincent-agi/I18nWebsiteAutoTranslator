@@ -1,1 +1,2 @@
-requests
+# Runtime dependency only. For development use:  pip install -e ".[dev]"
+requests>=2.31,<3
